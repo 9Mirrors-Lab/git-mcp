@@ -40,7 +40,7 @@ export default function Home() {
           const owner = parts[0];
           const repo = parts[1];
           if (owner && repo) {
-            targetUrl = `https://gitmcp.io/${owner}/${repo}${action === "chat" ? "/chat" : ""}`;
+            targetUrl = `https://gitmcp.9mirrors.xyz/${owner}/${repo}${action === "chat" ? "/chat" : ""}`;
           }
         }
       }
@@ -50,7 +50,7 @@ export default function Home() {
         if (owner && pathname) {
           const repo = pathname.split("/")[0];
           if (repo) {
-            targetUrl = `https://${owner}.gitmcp.io/${repo}${action === "chat" ? "/chat" : ""}`;
+            targetUrl = `https://gitmcp.9mirrors.xyz/${owner}/${repo}${action === "chat" ? "/chat" : ""}`;
           }
         }
       }

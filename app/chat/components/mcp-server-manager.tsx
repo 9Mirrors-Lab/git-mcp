@@ -76,7 +76,9 @@ export const MCPServerManager = ({
       return null;
     }
 
-    const newUrl = ["https://gitmcp.io", owner, repo].filter(Boolean).join("/");
+    const newUrl = ["https://gitmcp.9mirrors.xyz", owner, repo]
+      .filter(Boolean)
+      .join("/");
 
     const name = repo ? `${repo} Docs` : "MCP Docs";
 

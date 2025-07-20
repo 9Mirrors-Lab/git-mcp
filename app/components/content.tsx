@@ -132,7 +132,7 @@ export default function Content({
         <div className="text-center mb-8">
           <h1 className="text-xl sm:text-4xl font-bold mb-2 relative inline-block">
             <a
-              href="https://gitmcp.io"
+              href="https://gitmcp.9mirrors.xyz"
               className="text-blue-800 hover:text-blue-600 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
