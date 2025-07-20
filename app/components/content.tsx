@@ -32,12 +32,12 @@ export default function Content({
       return (
         <div>
           <span> for</span>{" "}
-          <strong className="text-blue-500">
+          <strong className="text-blue-400">
             <a
               href={`https://developers.cloudflare.com/`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-blue-400 hover:underline"
             >
               Cloudflare Documentation
             </a>
@@ -50,12 +50,12 @@ export default function Content({
       return (
         <div>
           <span> for the</span>{" "}
-          <strong className="text-blue-500">
+          <strong className="text-blue-400">
             <a
               href={`https://github.com/${owner}/${repo}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-blue-400 hover:underline"
             >
               {owner}/{repo}
             </a>
@@ -67,12 +67,12 @@ export default function Content({
       return (
         <div>
           <span> for the</span>{" "}
-          <strong className="text-blue-500">
+          <strong className="text-blue-400">
             <a
               href={`https://github.com/${owner}/${repo}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-blue-400 hover:underline"
             >
               {owner}/{repo}
             </a>
@@ -115,14 +115,14 @@ export default function Content({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex flex-col items-center p-8 px-4 sm:px-8 relative">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 flex flex-col items-center p-8 px-4 sm:px-8 relative">
       {/* GitHub Link */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10">
         <a
           href="https://github.com/idosal/git-mcp"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-800 px-3 py-2 rounded-md transition-colors duration-200 border border-gray-200 shadow-sm z-10"
+          className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-2 rounded-md transition-colors duration-200 border border-gray-700 shadow-sm z-10"
         >
           <Github className="h-5 w-5" />
           <span className="hidden sm:inline">GitHub</span>
@@ -133,18 +133,18 @@ export default function Content({
           <h1 className="text-xl sm:text-4xl font-bold mb-2 relative inline-block">
             <a
               href="https://gitmcp.9mirrors.xyz"
-              className="text-blue-800 hover:text-blue-600 transition-colors"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
               {documentationServerPrefix} Documentation Server
             </a>
           </h1>
-          <div className="mt-4 text-lg sm:text-xl text-slate-700">
+          <div className="mt-4 text-lg sm:text-xl text-gray-300">
             {description}
           </div>
           <div className="flex items-center justify-center mt-6">
-            <div className="h-0.5 w-12 bg-slate-300"></div>
+            <div className="h-0.5 w-12 bg-gray-600"></div>
             <div className="mx-4">
               <svg
                 width="24"
@@ -161,7 +161,7 @@ export default function Content({
                 />
               </svg>
             </div>
-            <div className="h-0.5 w-12 bg-slate-300"></div>
+            <div className="h-0.5 w-12 bg-gray-600"></div>
           </div>
         </div>
 
@@ -200,39 +200,39 @@ export default function Content({
           </div>
         </div>
 
-        <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 my-8 border border-slate-200">
-          <h2 className="text-lg sm:text-xl font-semibold text-blue-800 mb-4">
+        <div className="bg-gray-800 shadow-lg rounded-lg p-4 sm:p-6 my-8 border border-gray-700">
+          <h2 className="text-lg sm:text-xl font-semibold text-blue-400 mb-4">
             MCP Server URL
           </h2>
-          <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 flex items-center justify-between mb-2 relative">
-            <code className="text-slate-700 pr-10 break-all text-xs sm:text-lg">
+          <div className="bg-gray-700 border border-gray-600 rounded-lg p-3 flex items-center justify-between mb-2 relative">
+            <code className="text-gray-200 pr-10 break-all text-xs sm:text-lg">
               {url}
             </code>
             <button
               onClick={copyUrl}
-              className="absolute right-2 p-1.5 rounded-full hover:bg-slate-200 transition-colors"
+              className="absolute right-2 p-1.5 rounded-full hover:bg-gray-600 transition-colors"
               aria-label="Copy URL"
             >
               {copied ? (
-                <Check className="w-5 h-5 text-emerald-500" />
+                <Check className="w-5 h-5 text-emerald-400" />
               ) : (
-                <ClipboardCopy className="w-5 h-5 text-blue-600" />
+                <ClipboardCopy className="w-5 h-5 text-blue-400" />
               )}
             </button>
           </div>
           {copied && (
-            <p className="text-emerald-500 text-sm">URL copied to clipboard!</p>
+            <p className="text-emerald-400 text-sm">URL copied to clipboard!</p>
           )}
         </div>
 
-        <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 my-8 border border-slate-200">
-          <h2 className="text-lg sm:text-xl font-semibold text-blue-800 mb-4">
+        <div className="bg-gray-800 shadow-lg rounded-lg p-4 sm:p-6 my-8 border border-gray-700">
+          <h2 className="text-lg sm:text-xl font-semibold text-blue-400 mb-4">
             Connect your AI assistant
           </h2>
 
           {/* Tabs for different integrations */}
           <div className="mb-6">
-            <div className="flex flex-wrap border-b border-slate-200 mb-4">
+            <div className="flex flex-wrap border-b border-gray-600 mb-4">
               {[
                 "Cursor",
                 "Claude Desktop",
@@ -247,7 +247,7 @@ export default function Content({
                   className={`py-2 px-3 sm:px-4 font-medium text-xs sm:text-sm focus:outline-none cursor-pointer ${
                     activeTabIndex === index
                       ? "text-blue-600 border-b-2 border-blue-600"
-                      : "text-slate-600 hover:text-blue-600"
+                      : "text-gray-400 hover:text-blue-400"
                   }`}
                   onClick={(e) => {
                     setActiveTabIndex(index);
@@ -287,10 +287,10 @@ export default function Content({
 
             {/* Tab content */}
             <div id="tab-cursor" className="tab-content">
-              <div className="bg-slate-50 p-3 sm:p-4 rounded-md border border-slate-200">
-                <p className="text-sm text-slate-700 mb-2">
+              <div className="bg-gray-700 p-3 sm:p-4 rounded-md border border-gray-600">
+                <p className="text-sm text-gray-200 mb-2">
                   To add this MCP to Cursor, update your{" "}
-                  <code className="bg-slate-200 px-1.5 py-0.5 rounded text-blue-700 break-words">
+                  <code className="bg-gray-600 px-1.5 py-0.5 rounded text-blue-300 break-words">
                     ~/.cursor/mcp.json
                   </code>
                   :
@@ -311,10 +311,10 @@ export default function Content({
             </div>
 
             <div id="tab-claude-desktop" className="tab-content hidden">
-              <div className="bg-slate-50 p-3 sm:p-4 rounded-md border border-slate-200">
-                <p className="text-sm text-slate-700 mb-2">
+              <div className="bg-gray-700 p-3 sm:p-4 rounded-md border border-gray-600">
+                <p className="text-sm text-gray-200 mb-2">
                   To add this MCP to Claude Desktop, update your{" "}
-                  <code className="bg-slate-200 px-1.5 py-0.5 rounded text-blue-700 break-words">
+                  <code className="bg-gray-600 px-1.5 py-0.5 rounded text-blue-300 break-words">
                     claude_desktop_config.json
                   </code>
                   :
@@ -339,10 +339,10 @@ export default function Content({
             </div>
 
             <div id="tab-windsurf" className="tab-content hidden">
-              <div className="bg-slate-50 p-3 sm:p-4 rounded-md border border-slate-200">
-                <p className="text-sm text-slate-700 mb-2">
+              <div className="bg-gray-700 p-3 sm:p-4 rounded-md border border-gray-600">
+                <p className="text-sm text-gray-200 mb-2">
                   To add this MCP to Windsurf, update your{" "}
-                  <code className="bg-slate-200 px-1.5 py-0.5 rounded text-blue-700 break-words">
+                  <code className="bg-gray-600 px-1.5 py-0.5 rounded text-blue-300 break-words">
                     ~/.codeium/windsurf/mcp_config.json
                   </code>
                   :
@@ -362,10 +362,10 @@ export default function Content({
               </div>
             </div>
             <div id="tab-vscode" className="tab-content hidden">
-              <div className="bg-slate-50 p-3 sm:p-4 rounded-md border border-slate-200">
-                <p className="text-sm text-slate-700 mb-2">
+              <div className="bg-gray-700 p-3 sm:p-4 rounded-md border border-gray-600">
+                <p className="text-sm text-gray-200 mb-2">
                   To add this MCP to VSCode, update your{" "}
-                  <code className="bg-slate-200 px-1.5 py-0.5 rounded text-blue-700 break-words">
+                  <code className="bg-gray-600 px-1.5 py-0.5 rounded text-blue-300 break-words">
                     .vscode/mcp.json
                   </code>
                   :
@@ -387,10 +387,10 @@ export default function Content({
             </div>
 
             <div id="tab-cline" className="tab-content hidden">
-              <div className="bg-slate-50 p-3 sm:p-4 rounded-md border border-slate-200">
-                <p className="text-sm text-slate-700 mb-2">
+              <div className="bg-gray-700 p-3 sm:p-4 rounded-md border border-gray-600">
+                <p className="text-sm text-gray-200 mb-2">
                   To add this MCP to Cline, update your{" "}
-                  <code className="bg-slate-200 px-1.5 py-0.5 rounded text-blue-700 break-words">
+                  <code className="bg-gray-600 px-1.5 py-0.5 rounded text-blue-300 break-words">
                     ~/Library/Application
                     Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json
                   </code>
@@ -413,9 +413,9 @@ export default function Content({
             </div>
 
             <div id="tab-highlight-ai" className="tab-content hidden">
-              <div className="bg-slate-50 p-3 sm:p-4 rounded-md border border-slate-200">
+              <div className="bg-gray-700 p-3 sm:p-4 rounded-md border border-gray-600">
                 <div className="p-4">
-                  <ul className="text-sm text-slate-700 mb-4 list-disc pl-5 space-y-2">
+                  <ul className="text-sm text-gray-200 mb-4 list-disc pl-5 space-y-2">
                     <li>
                       Open Highlight AI and click the plugins icon (@ symbol) in
                       the sidebar
@@ -440,16 +440,16 @@ export default function Content({
                     />
                   </div>
 
-                  <p className="text-sm text-slate-700 mb-4">
+                  <p className="text-sm text-gray-200 mb-4">
                     Enter this as your plugin name:{" "}
-                    <code className="bg-slate-200 px-2 py-1 rounded text-blue-700 break-words block my-3">
+                    <code className="bg-gray-600 px-2 py-1 rounded text-blue-300 break-words block my-3">
                       {serverName}
                     </code>
                   </p>
 
-                  <p className="text-sm text-slate-700 mb-4">
+                  <p className="text-sm text-gray-200 mb-4">
                     Enter this URL as the SSE URL:{" "}
-                    <code className="bg-slate-200 px-2 py-1 rounded text-blue-700 break-words block my-3">
+                    <code className="bg-gray-600 px-2 py-1 rounded text-blue-300 break-words block my-3">
                       {url}
                     </code>
                   </p>
@@ -462,7 +462,7 @@ export default function Content({
                     />
                   </div>
 
-                  <p className="text-sm text-slate-700 mt-4">
+                  <p className="text-sm text-gray-200 mt-4">
                     For more details on adding custom MCP servers, refer to{" "}
                     <a
                       href="https://docs.highlightai.com/learn/developers/plugins/custom-plugins-setup"
@@ -479,29 +479,29 @@ export default function Content({
             </div>
 
             <div id="tab-augment-code" className="tab-content hidden">
-              <div className="bg-slate-50 p-3 sm:p-4 rounded-md border border-slate-200">
+              <div className="bg-gray-700 p-3 sm:p-4 rounded-md border border-gray-600">
                 <div className="p-4">
-                  <ul className="text-sm text-slate-700 mb-4 list-disc pl-5 space-y-2">
+                  <ul className="text-sm text-gray-200 mb-4 list-disc pl-5 space-y-2">
                     <li>Open Augment Code settings</li>
                     <li>Navigate to the MCP section</li>
                     <li>Add a new MCP server with the following details</li>
                   </ul>
 
-                  <p className="text-sm text-slate-700 mb-4">
+                  <p className="text-sm text-gray-200 mb-4">
                     Name the MCP server:{" "}
-                    <code className="bg-slate-200 px-2 py-1 rounded text-blue-700 break-words block my-3">
+                    <code className="bg-gray-600 px-2 py-1 rounded text-blue-300 break-words block my-3">
                       git-mcp Docs
                     </code>
                   </p>
 
-                  <p className="text-sm text-slate-700 mb-4">
+                  <p className="text-sm text-gray-200 mb-4">
                     Use this command:{" "}
-                    <code className="bg-slate-200 px-2 py-1 rounded text-blue-700 break-words block my-3">
+                    <code className="bg-gray-600 px-2 py-1 rounded text-blue-300 break-words block my-3">
                       npx mcp-remote ${url}
                     </code>
                   </p>
 
-                  <p className="text-sm text-slate-700 mb-4">
+                  <p className="text-sm text-gray-200 mb-4">
                     Or use the following configuration:{" "}
                   </p>
 
@@ -521,7 +521,7 @@ export default function Content({
                     name="Augment Code"
                   />
 
-                  <p className="text-sm text-slate-700 mt-4">
+                  <p className="text-sm text-gray-200 mt-4">
                     For more details on configuring MCP servers in Augment Code,
                     visit{" "}
                     <a
@@ -667,7 +667,7 @@ function CodeExample({
           }
         }}
         id={`${id}-copy-btn`}
-        className="absolute top-2 right-2 p-1 rounded-md hover:bg-slate-700 transition-colors focus:outline-none z-10"
+        className="absolute top-2 right-2 p-1 rounded-md hover:bg-gray-600 transition-colors focus:outline-none z-10"
         aria-label="Copy code"
       >
         <svg
@@ -691,7 +691,7 @@ function CodeExample({
             window.open(popoutUrl);
           }}
           id={`${id}-open-btn`}
-          className="absolute top-2 right-8 p-1 rounded-md hover:bg-slate-700 transition-colors focus:outline-none z-10"
+          className="absolute top-2 right-8 p-1 rounded-md hover:bg-gray-600 transition-colors focus:outline-none z-10"
           aria-label={`Open ${name}`}
         >
           <svg
