@@ -94,141 +94,67 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-16">
             <div className="mt-0 max-w-3xl mx-auto sm:mt-6">
-              <Divider text="or try the instant GitHub URL converter" />
-              <div className="bg-gray-800 border border-gray-700 rounded-lg sm:p-2 sm:pt-2  mb-8">
-                <form onSubmit={handleSubmit} className="m-3">
-                  <div className="flex rounded-md shadow-sm flex-col sm:flex-row gap-3 sm:gap-0">
-                    <div className="relative flex-1">
-                      <input
-                        type="text"
-                        name="github-url"
-                        id="github-url"
-                        className="w-full bg-gray-700 border border-gray-600 rounded-md py-2 pl-3 pr-28 text-base text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                        placeholder="Example: github.com/langchain-ai/langgraph"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                      />
-                      <button
-                        type="button"
-                        onClick={handleTryExample}
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-gray-600 hover:bg-gray-500 text-xs text-gray-200 rounded-md transition-colors duration-200"
-                      >
-                        Try Example
-                      </button>
-                    </div>
-                    <div className="flex justify-center sm:justify-start">
-                      <button
-                        type="submit"
-                        name="action"
-                        value="mcp"
-                        className=" cursor-pointer ml-3 inline-flex items-center px-2 py-1 border border-transparent text-sm font-bold  rounded-md shadow-sm text-gray-900 bg-emerald-400 hover:bg-emerald-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-                      >
-                        <span className="text-gray-800">To MCP</span>
-                      </button>
-                      <button
-                        type="submit"
-                        name="action"
-                        value="chat"
-                        className=" cursor-pointer ml-3 inline-flex items-center px-2 py-1 border border-transparent text-sm font-bold  rounded-md shadow-sm text-gray-900 bg-blue-400 hover:bg-blue-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 relative"
-                      >
-                        <span className="text-gray-800">To Chat</span>
-                      </button>
-                    </div>
-                  </div>
-                  {error && (
-                    <p
-                      className="mt-2 text-sm text-red-400"
-                      id="github-url-error"
-                    >
-                      {error}
-                    </p>
-                  )}
-                </form>
-              </div>
-              <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-3xl font-light tracking-tight text-gray-300/90 leading-relaxed">
-                Instantly create a{" "}
-                <span className="text-emerald-400 font-medium">
-                  Remote MCP server
-                </span>{" "}
-                for any GitHub repository
-              </p>
-              <p className="text-base pt-0 sm:text-xl text-gray-300 max-w-3xl mx-auto font-light px-2">
-                Simply change the domain from{" "}
-                <span className="text-gray-200 font-medium">github.com</span> or{" "}
-                <span className="text-gray-200 font-medium">github.io</span> to{" "}
-                <span className="text-emerald-400 font-medium">gitmcp.io</span>{" "}
-                and get instant AI context for any GitHub repository.
-              </p>
+              <Divider text="or try the instant GitHub URL converter below" />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-700 transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-emerald-900/20">
-              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4 sm:mb-5 font-bold mx-auto">
-                1
+          {/* GitHub URL Input Form */}
+          <div className="max-w-2xl mx-auto bg-gray-800 p-6 sm:p-8 rounded-xl border border-gray-700 shadow-xl">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="github-url"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
+                  Enter any GitHub repository URL:
+                </label>
+                <div className="relative">
+                  <input
+                    id="github-url"
+                    type="text"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    placeholder="Example: github.com/langchain-ai/langgraph"
+                    className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleTryExample}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs bg-gray-600 hover:bg-gray-500 text-gray-200 px-2 py-1 rounded transition-colors duration-200"
+                  >
+                    Try Example
+                  </button>
+                </div>
+                {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">
-                Create MCP URL
-              </h3>
-              <p className="text-sm sm:text-base text-gray-400 text-center">
-                Replace{" "}
-                <code className="bg-gray-700 px-1.5 py-0.5 rounded">
-                  github.com
-                </code>{" "}
-                with{" "}
-                <code className="bg-gray-700 px-1.5 py-0.5 rounded text-emerald-400">
-                  gitmcp.io
-                </code>{" "}
-                in any repository URL.
+
+              <div className="flex gap-3">
+                <button
+                  type="submit"
+                  value="mcp"
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-900/25"
+                >
+                  To MCP
+                </button>
+                <button
+                  type="submit"
+                  value="chat"
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-900/25"
+                >
+                  To Chat
+                </button>
+              </div>
+            </form>
+
+            <div className="mt-6 text-center">
+              <p className="text-sm text-gray-400">
+                Instantly create a Remote MCP server for any GitHub repository
+              </p>
+              <p className="text-xs text-gray-500 mt-2">
+                Simply change the domain from github.com or github.io to
+                gitmcp.io and get instant AI context for any GitHub repository.
               </p>
             </div>
-
-            <div className="bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-700 transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-emerald-900/20">
-              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4 sm:mb-5 font-bold mx-auto">
-                2
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">
-                Add to AI Assistant
-              </h3>
-              <p className="text-sm sm:text-base text-gray-400 text-center">
-                Configure your AI tool to use the GitMCP URL as a custom MCP
-                server.
-              </p>
-            </div>
-
-            <div className="bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-700 transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-xl hover:shadow-emerald-900/20">
-              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center mb-4 sm:mb-5 font-bold mx-auto">
-                3
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center">
-                Enhanced AI Coding
-              </h3>
-              <p className="text-sm sm:text-base text-gray-400 text-center">
-                Your AI now understands your repository's context for more
-                accurate and helpful responses.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video PW Demo Section */}
-      <section id="github-repo-demo" className="py-8 bg-gray-900">
-        <div className="text-center mb-4 sm:mb-4">
-          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 text-gradient">
-            A GitHub Repo
-          </h2>
-          <p className="mt-4 text-base sm:text-xl text-gray-300 max-w-3xl mx-auto font-light px-2">
-            GitMCP works with <b>any public GitHub repository</b>. Here's an
-            example:
-          </p>
-        </div>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-700">
-            <video className="w-full h-auto" controls muted loop playsInline>
-              <source src="./img/GitMCP_PW.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
           </div>
         </div>
       </section>
