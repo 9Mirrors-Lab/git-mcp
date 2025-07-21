@@ -119,10 +119,10 @@ export default function Content({
       {/* GitHub Link */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10">
         <a
-          href="https://github.com/idosal/git-mcp"
+          href="https://github.com/9Mirrors-Lab/git-mcp"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-2 rounded-md transition-colors duration-200 border border-gray-700 shadow-sm z-10"
+          className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-2 rounded-md transition-colors duration-200 border border-gray-700 z-10"
         >
           <Github className="h-5 w-5" />
           <span className="hidden sm:inline">GitHub</span>
